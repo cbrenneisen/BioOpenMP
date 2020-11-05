@@ -10,9 +10,18 @@
 
 using namespace std;
 
-void DNAProcessor::PrintHelloWorld()
+std::unordered_map<char, int> DNAProcessor::count_bases(string dna)
 {
+    //std::cout << "Hello World from DNA!!!\n";
+    unordered_map<char, int> map;
+    map['A'] = 0;
+    map['T'] = 0;
+    map['G'] = 0;
+    map['C'] = 0;
 
-std::cout << "Hello World from DNA!!!\n";
+    for (int i = 0; i < dna.size(); i++) {
+        map[dna[i]] ++;
+    }
 
+    return map;
 }

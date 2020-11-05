@@ -10,6 +10,7 @@
 		917AF7CF2553681C00DBFE08 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917AF7CE2553681C00DBFE08 /* main.cpp */; };
 		917AF7DA25536A4900DBFE08 /* DNAProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917AF7D825536A4900DBFE08 /* DNAProcessor.cpp */; };
 		917AF7E825536F5000DBFE08 /* libomp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7E725536F5000DBFE08 /* libomp.dylib */; };
+		917AF7EF25537C6E00DBFE08 /* Problems.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917AF7ED25537C6E00DBFE08 /* Problems.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		917AF7E325536E8600DBFE08 /* libomp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libomp.dylib; path = ../../../../../usr/local/Cellar/libomp/11.0.0/lib/libomp.dylib; sourceTree = "<group>"; };
 		917AF7E725536F5000DBFE08 /* libomp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libomp.dylib; path = ../../../../../usr/local/Cellar/llvm/11.0.0/lib/libomp.dylib; sourceTree = "<group>"; };
 		917AF7EB2553700D00DBFE08 /* BioOpenMP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BioOpenMP.entitlements; sourceTree = "<group>"; };
+		917AF7ED25537C6E00DBFE08 /* Problems.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Problems.cpp; sourceTree = "<group>"; };
+		917AF7EE25537C6E00DBFE08 /* Problems.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Problems.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				917AF7CE2553681C00DBFE08 /* main.cpp */,
 				917AF7D825536A4900DBFE08 /* DNAProcessor.cpp */,
 				917AF7D925536A4900DBFE08 /* DNAProcessor.hpp */,
+				917AF7ED25537C6E00DBFE08 /* Problems.cpp */,
+				917AF7EE25537C6E00DBFE08 /* Problems.hpp */,
 			);
 			path = BioOpenMP;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				917AF7DA25536A4900DBFE08 /* DNAProcessor.cpp in Sources */,
 				917AF7CF2553681C00DBFE08 /* main.cpp in Sources */,
+				917AF7EF25537C6E00DBFE08 /* Problems.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

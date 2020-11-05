@@ -6,41 +6,24 @@
 //
 
 #include <iostream>
-#include "DNAProcessor.hpp"
-#include <sstream>
-#include <string>
-#include <unordered_map>
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "Problems.hpp"
 
 using namespace std;
 
-
 int main(int argc, const char * argv[]) {
 
-    DNAProcessor processor;
-    processor.PrintHelloWorld();
-    // insert code here...
-    //std::cout << "Hello, World!\n";
-    
-    unordered_map<char, char> map;
-    map['A'] = 'T';
-    map['T'] = 'A';
-    map['G'] = 'C';
-    map['C'] = 'G';
+    Problems problems;
+    char option = *(argv[1]);
 
-    string dna = argv[1];
-
-    ostringstream os;
-
-    #pragma omp parallel for
-    for (int i = 0; i < dna.size(); i++) {
-          int thread = omp_get_thread_num();
-          printf("%d - %c\n", thread, dna[i]);
-          //cout << dna[i] << endl;
+    switch (option) {
+        case '1':
+            problems.problem1(argc, argv);
+            break;
+        default:
+            printf("Invalid option selected: %c", option);
     }
-
-    
     return 0;
 }

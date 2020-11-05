@@ -9,15 +9,19 @@
 #define DNAProcessor_hpp
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unordered_map>
 
 #endif /* DNAProcessor_hpp */
+
+using namespace std;
 
 class DNAProcessor
 {
 
 public:
 
-void PrintHelloWorld();
+unordered_map<char, int> count_bases(string dna);
 
 
 };
