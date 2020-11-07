@@ -274,7 +274,7 @@
 				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = ZXDRK5959K;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = " /usr/local/opt/llvm/lib/clang/4.0.1/include";
+				HEADER_SEARCH_PATHS = /usr/local/opt/llvm/lib/clang/11.0.0/include;
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/opt/llvm/lib,
 					/usr/local/Cellar/libomp/11.0.0/lib,
@@ -295,7 +295,7 @@
 				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = ZXDRK5959K;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = " /usr/local/opt/llvm/lib/clang/4.0.1/include";
+				HEADER_SEARCH_PATHS = /usr/local/opt/llvm/lib/clang/11.0.0/include;
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/opt/llvm/lib,
 					/usr/local/Cellar/libomp/11.0.0/lib,

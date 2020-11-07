@@ -12,7 +12,6 @@ using namespace std;
 
 std::unordered_map<char, int> DNAProcessor::count_bases(string dna)
 {
-    //std::cout << "Hello World from DNA!!!\n";
     unordered_map<char, int> map;
     map['A'] = 0;
     map['T'] = 0;
