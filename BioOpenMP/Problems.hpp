@@ -23,5 +23,7 @@ class Problems
 public:
 
 void problem1(int argc, const char **argv);
+    
+void problem2(int argc, const char **argv);
 
 };

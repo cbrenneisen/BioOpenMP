@@ -22,6 +22,9 @@ int main(int argc, const char * argv[]) {
         case '1':
             problems.problem1(argc, argv);
             break;
+        case '2':
+            problems.problem2(argc, argv);
+            break;
         default:
             printf("Invalid option selected: %c", option);
     }

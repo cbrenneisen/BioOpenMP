@@ -23,6 +23,8 @@ public:
 
 unordered_map<char, int> count_bases(string dna);
 
+string transcribe(string dna);
+
 
 };
 
