@@ -26,8 +26,6 @@ int main(int argc, const char * argv[]) {
     } else {
         number_of_threads = omp_get_num_procs();
     }
-    
-    char option = *(argv[1]);
 
     int problem;
     printf("Enter a problem number\n");
@@ -43,8 +41,11 @@ int main(int argc, const char * argv[]) {
         case 3:
             problems.problem3(number_of_threads);
             break;
+        case 4:
+            problems.problem4(number_of_threads);
+            break;
         default:
-            printf("Invalid option selected. Problems go from 1-3 \n");
+            printf("Invalid option selected. Problems go from 1-4 \n");
     }
     return 0;
 }

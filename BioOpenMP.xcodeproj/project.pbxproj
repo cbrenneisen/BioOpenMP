@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910C51B02562FB67000AB3A0 /* GenerationProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910C51AE2562FB67000AB3A0 /* GenerationProcessor.cpp */; };
 		917AF7CF2553681C00DBFE08 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917AF7CE2553681C00DBFE08 /* main.cpp */; };
 		917AF7DA25536A4900DBFE08 /* DNAProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917AF7D825536A4900DBFE08 /* DNAProcessor.cpp */; };
 		917AF7E825536F5000DBFE08 /* libomp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7E725536F5000DBFE08 /* libomp.dylib */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		910C51AE2562FB67000AB3A0 /* GenerationProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GenerationProcessor.cpp; sourceTree = "<group>"; };
+		910C51AF2562FB67000AB3A0 /* GenerationProcessor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GenerationProcessor.hpp; sourceTree = "<group>"; };
 		917AF7CB2553681C00DBFE08 /* BioOpenMP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BioOpenMP; sourceTree = BUILT_PRODUCTS_DIR; };
 		917AF7CE2553681C00DBFE08 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		917AF7D825536A4900DBFE08 /* DNAProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DNAProcessor.cpp; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				917AF7D925536A4900DBFE08 /* DNAProcessor.hpp */,
 				917AF7ED25537C6E00DBFE08 /* Problems.cpp */,
 				917AF7EE25537C6E00DBFE08 /* Problems.hpp */,
+				910C51AE2562FB67000AB3A0 /* GenerationProcessor.cpp */,
+				910C51AF2562FB67000AB3A0 /* GenerationProcessor.hpp */,
 			);
 			path = BioOpenMP;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910C51B02562FB67000AB3A0 /* GenerationProcessor.cpp in Sources */,
 				917AF7DA25536A4900DBFE08 /* DNAProcessor.cpp in Sources */,
 				917AF7CF2553681C00DBFE08 /* main.cpp in Sources */,
 				917AF7EF25537C6E00DBFE08 /* Problems.cpp in Sources */,

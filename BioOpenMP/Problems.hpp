@@ -22,14 +22,21 @@ class Problems
     
 public:
 
-void problem1(int number_of_threads);
+    // base count
+    void problem1(int number_of_threads);
     
-void problem2(int number_of_threads);
-    
-void problem3(int number_of_threads);
+    // transcription
+    void problem2(int number_of_threads);
+
+    // reverse complement
+    void problem3(int number_of_threads);
+
+    // recurrence relations
+    void problem4(int number_of_threads);
     
 private:
-    
-    string get_string(string prompt);
 
+    string get_string(string prompt);
+    
+    int get_int(string prompt);
 };
