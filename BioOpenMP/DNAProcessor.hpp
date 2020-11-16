@@ -21,10 +21,17 @@ class DNAProcessor
 
 public:
 
-unordered_map<char, int> count_bases(string dna);
+    unordered_map<char, int> count_bases(string dna);
+    
+    string transcribe(string dna);
 
-string transcribe(string dna);
+    string reverse_complement(string dna);
+    
+private:
 
+    char complement(char base);
+
+    unordered_map<int, string> thread_map();
 
 };
 

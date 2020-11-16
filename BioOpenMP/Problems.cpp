@@ -11,33 +11,46 @@
 
 using namespace std;
 
-void Problems::problem1(int argc, const char **argv) {
+void Problems::problem1(int number_of_threads) {
 
-    if (argc < 2) {
-        cout << "Not enough arguments provided - add dna string";
-        return;
-    }
-    
-    string dna = argv[2];
+    string dna = get_string("Enter a dna string \n");
+
     DNAProcessor processor;
     unordered_map<char, int> bases = processor.count_bases(dna);
 
-    cout << "Here's the dna results\n";
+    cout << "Here's the base counts: \n";
     printf("%d %d %d %d \n", bases['A'], bases['C'], bases['G'], bases['T']);
 }
 
-void Problems::problem2(int argc, const char **argv) {
+void Problems::problem2(int number_of_threads) {
 
-    if (argc < 2) {
-        cout << "Not enough arguments provided - add dna string";
-        return;
-    }
+    string dna = get_string("Enter a dna string \n");
 
-    string dna = argv[2];
     DNAProcessor processor;
     string rna = processor.transcribe(dna);
 
-    printf("Input:  %s\n", dna.c_str());
     cout << "Here's the dna -> rna results\n";
-    printf("Output: %s\n", rna.c_str());
+    printf("%s\n", rna.c_str());
+}
+
+void Problems::problem3(int number_of_threads) {
+
+    string dna = get_string("Enter a dna string \n");
+
+    DNAProcessor processor;
+    string rna = processor.reverse_complement(dna);
+
+    cout << "Here's the reverse complement \n";
+    printf("%s\n", rna.c_str());
+}
+
+
+string Problems::get_string(string prompt) {
+
+    string input;
+    printf("Enter a dna string \n");
+    cin.ignore();
+    getline(cin, input);
+
+    return input;
 }

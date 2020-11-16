@@ -22,8 +22,14 @@ class Problems
     
 public:
 
-void problem1(int argc, const char **argv);
+void problem1(int number_of_threads);
     
-void problem2(int argc, const char **argv);
+void problem2(int number_of_threads);
+    
+void problem3(int number_of_threads);
+    
+private:
+    
+    string get_string(string prompt);
 
 };
