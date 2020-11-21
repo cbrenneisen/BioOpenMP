@@ -32,6 +32,9 @@ private:
     char complement(char base);
 
     unordered_map<int, string> thread_map();
+    
+    unordered_map<char, int> base_map();
 
+    unordered_map<int, unordered_map<char, int>> thread_map_bases();
 };
 

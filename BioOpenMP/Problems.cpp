@@ -56,7 +56,6 @@ void Problems::problem4(int number_of_threads) {
     printf("Here's the result: %d\n", result);
 }
 
-
 string Problems::get_string(string prompt) {
 
     string input;

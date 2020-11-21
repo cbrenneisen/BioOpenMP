@@ -13,36 +13,38 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[]) {
-
-    Problems problems;
-
-    int number_of_threads;
+int set_num_threads(int &number_of_threads, int argc, const char **argv) {
     if (argc > 2) {
         printf("Too many arguments specified. \n");
         printf("Usage: ./bioMP n");
         return 1;
     }
-    else if (argc == 2) {
-        number_of_threads = atoi(argv[1]);
-        char *letters;
-        number_of_threads = (int)strtol(argv[1], &letters, 10);
-        if (strlen(letters) > 0) {
-            printf("Number of threads must be a number (got '%s')\n", letters);
-            return 1;
-        }
-        if (number_of_threads <= 0) {
-            printf("Invalid number of threads specified. Must be 1 or greater. \n");
-            return 1;
-        }
-        printf("Using custom thread count...\n");
-    } else {
+    
+    if (argc < 2) {
         number_of_threads = omp_get_num_procs();
         printf("Using default number of threads...\n");
+        return 0;
     }
 
-    printf("Using %d threads...\n", number_of_threads);
+    // argc == 2
+    char *letters;
+    number_of_threads = (int)strtol(argv[1], &letters, 10);
+    if (strlen(letters) > 0) {
+        printf("Number of threads must be a number (got '%s')\n", letters);
+        return 1;
+    }
+    if (number_of_threads <= 0) {
+        printf("Invalid number of threads specified. Must be 1 or greater. \n");
+        return 1;
+    }
+    printf("Using custom thread count (%d)...\n", number_of_threads);
 
+    return 0;
+}
+
+int select_problem(int number_of_threads) {
+    
+    Problems problems;
     int problem;
     printf("Enter a problem number\n");
     scanf("%d", &problem);
@@ -65,4 +67,15 @@ int main(int argc, const char * argv[]) {
             return 1;
     }
     return 0;
+}
+
+int main(int argc, const char * argv[]) {
+
+    int number_of_threads;
+    int result = set_num_threads(number_of_threads, argc, argv);
+    if (result != 0) {
+        return result;
+    }
+
+    return select_problem(number_of_threads);
 }

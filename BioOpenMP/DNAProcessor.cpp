@@ -15,17 +15,25 @@ using namespace std;
 
 unordered_map<char, int> DNAProcessor::count_bases(string dna)
 {
-    unordered_map<char, int> map;
-    map['A'] = 0;
-    map['T'] = 0;
-    map['G'] = 0;
-    map['C'] = 0;
+    int num_threads = omp_get_num_procs();
 
-    for (int i = 0; i < dna.size(); i++) {
-        map[dna[i]] ++;
+    int dna_length = (int)dna.size();
+    unordered_map<int, unordered_map<char, int>> thread_bases;
+    #pragma omp parallel for
+    for (int i = 0; i < dna_length; i++) {
+        thread_bases[i][dna[i]] ++;
     }
 
-    return map;
+    unordered_map<char, int> results = base_map();
+    for (int i = 0; i < num_threads; i++) {
+        unordered_map<char, int> thread_base_count = thread_bases[i];
+        results['A'] += thread_base_count['A'];
+        results['T'] += thread_base_count['T'];
+        results['G'] += thread_base_count['G'];
+        results['C'] += thread_base_count['C'];
+    }
+
+    return results;
 }
 
 string DNAProcessor::transcribe(string dna)
@@ -38,7 +46,7 @@ string DNAProcessor::transcribe(string dna)
     
     #pragma omp parallel for ordered schedule(static)
     for (long i = 0; i < dna_length; i++) {
-        printf("%d", omp_get_thread_num());
+//        printf("%d", omp_get_thread_num());
         char base = dna[i];
         map[omp_get_thread_num()] += base == 'T' ? 'U' : base;
     }
@@ -82,6 +90,26 @@ unordered_map<int, string> DNAProcessor::thread_map() {
     return map;
 }
 
+unordered_map<char, int> DNAProcessor::base_map() {
+    unordered_map<char, int> base_map;
+    base_map['A'] = 0;
+    base_map['T'] = 0;
+    base_map['G'] = 0;
+    base_map['C'] = 0;
+
+    return base_map;
+}
+
+unordered_map<int, unordered_map<char, int>> DNAProcessor::thread_map_bases() {
+    unordered_map<int, unordered_map<char, int>> map;
+    int num_threads = omp_get_num_procs();
+
+    for (int i=0; i< num_threads; ++i) {
+        map[i] = base_map();
+    }
+    return map;
+}
+
 char DNAProcessor::complement(char base) {
     switch (base) {
         case 'A':
@@ -96,6 +124,3 @@ char DNAProcessor::complement(char base) {
             return base;
     }
 }
-
-
-
